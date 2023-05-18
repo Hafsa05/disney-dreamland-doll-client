@@ -20,7 +20,7 @@ const Navbar = () => {
 	</>
 	return (
 		<div>
-			<div className="navbar h-24 m-4	bg-purple-50 w-full">
+			<div className="navbar h-24 bg-purple-50 w-full">
 				<div className="navbar-start">
 					<div className="dropdown">
 						<label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -30,10 +30,12 @@ const Navbar = () => {
 							{navItems}
 						</ul>
 					</div>
-					<div >
-						<Link to="/"><img src={logo} alt="page logo" className='rounded-full w-20 ' /></Link>
-						<h2 className='font-bold font-serif text-purple-700'>Disney Dreamland Doll</h2>
-						<p><small className='text-purple-500'>Live Dream With Disney Magic</small> </p>
+					<div className="flex ml-20 items-center" >
+						<Link to="/"><img src={logo} alt="page logo" className='rounded-full w-20' /></Link>
+						<div className="ml-5">
+							<h2 className='font-bold font-serif text-purple-700'><Link to='/'>Disney Dreamland Doll</Link> </h2>
+							<p><small className='text-purple-500'>Live Dream With Disney Magic</small> </p>
+						</div>
 					</div>
 
 				</div>

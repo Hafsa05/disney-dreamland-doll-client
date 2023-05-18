@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo/logo.png'
 const Footer = () => {
 	return (
@@ -53,8 +54,8 @@ const Footer = () => {
 					©2023 Disney Dreamland Doll. All rights reserved.
 				</div>
 				<div className="md:place-self-center md:justify-self-end flex">
-					<a className="link link-hover">Terms and Conditions </a>
-					<a className="link link-hover">Privacy Policy </a>
+					<Link to='/terms'><a className="link link-hover">Terms and Conditions </a></Link>
+					<Link to='/terms'><a className="link link-hover">Privacy Policy </a></Link>
 
 				</div>
 			</footer>
