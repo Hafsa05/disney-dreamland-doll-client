@@ -5,7 +5,7 @@
 		"subcategories": [
 			{
 				"name": "Cinderella",
-				"id": 11,
+				"id_sub": 11,
 				"picture": "cinderella.jpg",
 				"rating": 4.5,
 				"price": 29.99,
@@ -13,7 +13,7 @@
 			},
 			{
 				"name": "Belle",
-				"id": 12,
+				"id_sub": 12,
 				"picture": "belle.jpg",
 				"rating": 4.8,
 				"price": 34.99,
@@ -21,7 +21,7 @@
 			},
 			{
 				"name": "Ariel",
-				"id": 13,
+				"id_sub": 13,
 				"picture": "ariel.jpg",
 				"rating": 4.6,
 				"price": 31.99,
@@ -29,7 +29,7 @@
 			},
 			{
 				"name": "Jasmine",
-				"id": 14,
+				"id_sub": 14,
 				"picture": "jasmine.jpg",
 				"rating": 4.7,
 				"price": 28.99,
@@ -43,7 +43,7 @@
 		"subcategories": [
 			{
 				"name": "Elsa",
-				"id": 25,
+				"id_sub": 25,
 				"picture": "elsa.jpg",
 				"rating": 4.9,
 				"price": 39.99,
@@ -51,7 +51,7 @@
 			},
 			{
 				"name": "Anna",
-				"id": 26,
+				"id_sub": 26,
 				"picture": "anna.jpg",
 				"rating": 4.7,
 				"price": 36.99,
@@ -59,7 +59,7 @@
 			},
 			{
 				"name": "Olaf",
-				"id": 27,
+				"id_sub": 27,
 				"picture": "olaf.jpg",
 				"rating": 4.4,
 				"price": 19.99,
@@ -67,7 +67,7 @@
 			},
 			{
 				"name": "Sven",
-				"id": 28,
+				"id_sub": 28,
 				"picture": "sven.jpg",
 				"rating": 4.3,
 				"price": 24.99,
@@ -76,24 +76,78 @@
 		]
 	},
 	{
-		"id": 3,
 		"category": "Animation Doll",
+		"id": 3,
 		"subcategories": [
 			{
 				"name": "Mickey Mouse",
-				"id": 39,
+				"id": 31,
 				"picture": "mickey.jpg",
-				"rating": 4.8,
-				"price": 26.99,
+				"rating": 4.5,
+				"price": 29.99,
 				"details": "Celebrate the classic charm of Mickey Mouse with this doll."
 			},
 			{
 				"name": "Minnie Mouse",
-				"id": 30,
+				"id": 32,
 				"picture": "minnie.jpg",
-				"rating": 4.7,
-				"price": 25.99,
+				"rating": 4.8,
+				"price": 34.99,
 				"details": "Join Minnie Mouse in her stylish adventures with this doll."
+			},
+			{
+				"name": "Donald Duck",
+				"id": 33,
+				"picture": "donald.jpg",
+				"rating": 4.6,
+				"price": 31.99,
+				"details": "Get a quack out of playtime with this Donald Duck doll."
+			},
+			{
+				"name": "Goofy",
+				"id": 34,
+				"picture": "goofy.jpg",
+				"rating": 4.7,
+				"price": 28.99,
+				"details": "Bring home the wacky fun of Goofy with this doll."
+			}
+		]
+	},
+	{
+		"category": "Donald Duck",
+		"id": 4,
+		"subcategories": [
+			{
+				"name": "Classic Donald",
+				"id": 45,
+				"picture": "classic-donald.jpg",
+				"rating": 4.9,
+				"price": 39.99,
+				"details": "Embrace the mischievous charm of classic Donald Duck with this doll."
+			},
+			{
+				"name": "Sailor Donald",
+				"id": 46,
+				"picture": "sailor-donald.jpg",
+				"rating": 4.7,
+				"price": 36.99,
+				"details": "Set sail for adventure with this Sailor Donald doll."
+			},
+			{
+				"name": "Wizard Donald",
+				"id": 47,
+				"picture": "wizard-donald.jpg",
+				"rating": 4.4,
+				"price": 19.99,
+				"details": "Experience the magic of Wizard Donald with this enchanting doll."
+			},
+			{
+				"name": "Donald and Friends",
+				"id": 48,
+				"picture": "donald-friends.jpg",
+				"rating": 4.3,
+				"price": 24.99,
+				"details": "Join Donald and his friends on exciting adventures with this doll set."
 			}
 		]
 	}

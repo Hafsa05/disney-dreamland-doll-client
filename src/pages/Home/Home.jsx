@@ -4,7 +4,7 @@ import banner3 from '../../assets/banner/New folder/b2.webp'
 import banner4 from '../../assets/banner/New folder/b4.jpg'
 import banner5 from '../../assets/banner/New folder/b3.webp'
 import Gallery from './Gallery/Gallery'
-import ShopCatergory from './ShopCatergory/ShopCatergory'
+import ShopCategory from './ShopCategory/ShopCategory'
 
 
 const Home = () => {
@@ -41,7 +41,7 @@ const Home = () => {
 			<Gallery></Gallery>
 
 			{/* react tab - shop by Category */}
-			<ShopCatergory></ShopCatergory>
+			<ShopCategory></ShopCategory>
 
 		</div>
 	);

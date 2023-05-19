@@ -2,22 +2,17 @@
 
 const Blogs = () => {
 	return (
-		<div>
+		<div className="p-10">
 			<p className="font-semibold text-purple-400">Que 1. What is an access token and refresh token? How do they work and where should we store them on the client-side?</p>
 			<p> <span className="font-semibold text-purple-400"> Ans: </span><br /> In authentication and authorisation systems, access tokens and refresh tokens commonly used.</p>
 			<p>An access token is a temporary token used to get access to protected resources. It is commonly used to send authenticated requests to a resource server. Access tokens are often provided with a limited scope that specifies the resources to which they can be utilized. A refresh token is a token that has a lengthy life and may be used to receive additional access tokens. Refresh tokens are normally not used to directly access protected resources. They are instead used to get fresh access tokens when the previous one expires. Refresh tokens often have a broader reach than access tokens.</p>
 			<p>When a user signs in to an application, the authorization server provides the client application with an access token. The access token is used by the client application to perform authenticated queries to the resource server. When the access token expires, the client application can receive a new access token by using the refresh token. The refresh token may only be used a certain number of times to receive new access tokens. After a specific number of uses, the refresh token is revoked and cannot be used to get new access tokens.</p>
 			<p>These two tokens are normally stored on the client side. But the particular place where they are kept, is determined by the programer.Access tokens and refresh tokens may be saved in the browser's local storage or session storage in some instances. In other circumstances, they may be saved in a database or on the user's device as a file. It is essential to securely store access tokens and refresh tokens. If they are not secured properly, attacker might use them to gain access to protected resources on the user's behalf. So to protect them and to secure our data we can follow the following steps :
-				<div>
-					<ul className="list-decimal">
-						<li>i. Use algorithm to encrypt access tokens and refresh tokens before storing them so that we can protect then from misuse.</li>
-					</ul>
-					<ul>
-						<li>ii. Store these tokens in a secure location.</li>
-					</ul>
-					<ul><li>iii. Invalidate them when they are no longer needed.</li>
-					</ul>
-				</div>
+				<ul className="p-10 list-disc">
+					<li> Use algorithm to encrypt access tokens and refresh tokens before storing them so that we can protect then from misuse.</li>
+					<li> Store these tokens in a secure location.</li>
+					<li> Invalidate them when they are no longer needed.</li>
+				</ul>
 			</p>
 			<p className="font-semibold text-purple-500">Que 2. Compare SQL and NoSQL databases?</p>
 			<p><span className="font-semibold text-purple-500"> Ans: </span><br /></p>
@@ -26,8 +21,8 @@ const Blogs = () => {
 			<table className=" min-w-full">
 				<thead>
 					<tr className="bg-purple-100">
-						<th className="border px-4 py-2 text-purple-500">SQL</th>
-						<th className="border px-4 py-2 text-purple-500">NoSQL</th>
+						<th className="border px-4 py-2 text-purple-500">SQL Database</th>
+						<th className="border px-4 py-2 text-purple-500">NoSQL Database</th>
 					</tr>
 				</thead>
 				<tbody>

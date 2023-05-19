@@ -69,7 +69,7 @@ const Registration = () => {
 										<span className="label-text">Password</span>
 									</label>
 									<input type="password" placeholder="password" name="password" className="input input-bordered" required />
-									
+
 									<label className="label">
 										<a href="#" className="label-text-alt link link-hover">Forgot password?</a>
 									</label>
@@ -78,9 +78,6 @@ const Registration = () => {
 									<input className="btn btn-primary" type="submit" value="Registration" />
 								</div>
 							</form>
-							{/* <div className="form-control mt-4">
-								<input className="btn btn-primary" type="submit" value="" />
-							</div> */}
 							<p className='my-5 text-center'>Already have an account? <br /><Link className='text-purple-500 font-bold' to='/login'>Login</Link> </p>
 						</div>
 					</div>
