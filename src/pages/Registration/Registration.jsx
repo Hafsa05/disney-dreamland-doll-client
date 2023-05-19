@@ -10,8 +10,6 @@ const Registration = () => {
 	const [error, setError] = useState('');
 	const [success, setSuccess] = useState('');
 
-
-
 	const handleRegistration = event => {
 		event.preventDefault();
 		const form = event.target;

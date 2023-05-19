@@ -1,0 +1,100 @@
+[
+	{
+		"id": 1,
+		"category": "Disney Princess",
+		"subcategories": [
+			{
+				"name": "Cinderella",
+				"id": 11,
+				"picture": "cinderella.jpg",
+				"rating": 4.5,
+				"price": 29.99,
+				"details": "A beautiful doll of Cinderella, the iconic Disney Princess."
+			},
+			{
+				"name": "Belle",
+				"id": 12,
+				"picture": "belle.jpg",
+				"rating": 4.8,
+				"price": 34.99,
+				"details": "Bring home the charming Belle doll from Disney's Beauty and the Beast."
+			},
+			{
+				"name": "Ariel",
+				"id": 13,
+				"picture": "ariel.jpg",
+				"rating": 4.6,
+				"price": 31.99,
+				"details": "Dive into adventure with the Ariel doll, inspired by The Little Mermaid."
+			},
+			{
+				"name": "Jasmine",
+				"id": 14,
+				"picture": "jasmine.jpg",
+				"rating": 4.7,
+				"price": 28.99,
+				"details": "Explore the magical world of Aladdin with the Jasmine doll."
+			}
+		]
+	},
+	{
+		"id": 2,
+		"category": "Frozen Doll",
+		"subcategories": [
+			{
+				"name": "Elsa",
+				"id": 25,
+				"picture": "elsa.jpg",
+				"rating": 4.9,
+				"price": 39.99,
+				"details": "Experience the power of Elsa with this Frozen-themed doll."
+			},
+			{
+				"name": "Anna",
+				"id": 26,
+				"picture": "anna.jpg",
+				"rating": 4.7,
+				"price": 36.99,
+				"details": "Join Anna on her epic journey with this Frozen doll."
+			},
+			{
+				"name": "Olaf",
+				"id": 27,
+				"picture": "olaf.jpg",
+				"rating": 4.4,
+				"price": 19.99,
+				"details": "Have fun and play with Olaf, the lovable snowman from Frozen."
+			},
+			{
+				"name": "Sven",
+				"id": 28,
+				"picture": "sven.jpg",
+				"rating": 4.3,
+				"price": 24.99,
+				"details": "Bring home Sven, the reindeer companion from Disney's Frozen."
+			}
+		]
+	},
+	{
+		"id": 3,
+		"category": "Animation Doll",
+		"subcategories": [
+			{
+				"name": "Mickey Mouse",
+				"id": 39,
+				"picture": "mickey.jpg",
+				"rating": 4.8,
+				"price": 26.99,
+				"details": "Celebrate the classic charm of Mickey Mouse with this doll."
+			},
+			{
+				"name": "Minnie Mouse",
+				"id": 30,
+				"picture": "minnie.jpg",
+				"rating": 4.7,
+				"price": 25.99,
+				"details": "Join Minnie Mouse in her stylish adventures with this doll."
+			}
+		]
+	}
+]
