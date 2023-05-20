@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from '../../../providers/AuthProvider';
 import Select from 'react-select';
 import CreatableSelect from "react-select/creatable";
+import Swal from 'sweetalert2';
 
 const AddToy = () => {
 
@@ -36,6 +37,14 @@ const AddToy = () => {
 
 	];
 
+	const handleClick = () => {
+		Swal.fire(
+			'Good job!!',
+			'Toy data add done!',
+			'success'
+		  )
+	}
+
 	return (
 		<div>
 			<div className='card card-body flex items-center justify-center max-w-xl shadow-xl bg-purple-50 '>
@@ -67,7 +76,7 @@ const AddToy = () => {
 						options={categoryOptions}
 					/>
 					<br />
-					<input className=" btn btn-outline btn-primary" type="submit" />
+					<input onClick={handleClick} className=" btn btn-outline btn-primary" type="submit" />
 
 				</form>
 			</div>

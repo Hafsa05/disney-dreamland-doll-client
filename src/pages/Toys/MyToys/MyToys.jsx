@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import MyToysData from './MyToysData';
 import { AuthContext } from '../../../providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const MyToys = () => {
 
@@ -27,7 +28,24 @@ const MyToys = () => {
 	}
 
 	const handleDelete = (id) => {
-		const proceed = confirm("Are you sure you want to delete??");
+		const proceed =
+			Swal.fire({
+				title: 'Are you sure?',
+				text: "You won't be able to revert this!",
+				icon: 'warning',
+				showCancelButton: true,
+				confirmButtonColor: '#3085d6',
+				cancelButtonColor: '#d33',
+				confirmButtonText: 'Yes, delete it!'
+			}).then((result) => {
+				if (result.isConfirmed) {
+					Swal.fire(
+						'Deleted!',
+						'Your file has been deleted.',
+						'success'
+					)
+				}
+			});
 		if (proceed) {
 			fetch(`http://localhost:5000/my-toys/${id}`, {
 				method: 'DELETE'
@@ -36,7 +54,6 @@ const MyToys = () => {
 				.then(data => {
 					console.log(data);
 					if (data.deletedCount > 0) {
-						alert("delete successfully");
 						const remaining = myToys.filter(myToy => myToy._id !== id);
 						setMyToys(remaining);
 					}
