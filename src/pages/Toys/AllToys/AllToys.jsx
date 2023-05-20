@@ -9,7 +9,7 @@ const AllToys = () => {
 			.then(result => {
 				setToys(result);
 			})
-	})
+	}, [])
 	return (
 		<div className='p-10 mx-auto'> 
 			<p>Table length: {toys.length}</p>
@@ -18,12 +18,12 @@ const AllToys = () => {
 				<table className="table w-full">
 					<thead>
 						<tr>
-							<th>Seller Name</th>
-							<th>Toy Name </th>
-							<th>Sub Category</th>
-							<th>Price</th>
-							<th>Quantity</th>
-							<th>View</th>
+							<th className="bg-purple-100">Seller Name</th>
+							<th className="bg-purple-100">Toy Name </th>
+							<th className="bg-purple-100">Sub Category</th>
+							<th className="bg-purple-100">Price</th>
+							<th className="bg-purple-100">Quantity</th>
+							<th className="bg-purple-100">View</th>
 							
 						</tr>
 					</thead>
