@@ -16,10 +16,11 @@ const MyToysData = ({ myToy, handleDelete }) => {
 			<td>$ {price}</td>
 			<td>{availableQuantity}</td>
 			<th>
-				<button className="btn btn-ghost btn-xs">View Details</button>
+				<Link to={`/toys-details/${_id}`}><button className="btn btn-ghost btn-xs">View Details</button></Link>
 			</th>
 			<th>
-				<button className="btn btn-ghost btn-xs"><Link to='/update-toy-details'>Update Details</Link>  </button>
+				{/* <button className="btn btn-ghost btn-xs"><Link to='/update-toys'>Update Details</Link>  </button> */}
+				<Link to={`/update-toys/${_id}`}><button className="btn btn-ghost btn-xs">Update Details</button></Link>
 			</th>
 			<th>
 				<button className="btn btn-ghost btn-xs" onClick={() => handleDelete(_id)}>Delete Product</button>

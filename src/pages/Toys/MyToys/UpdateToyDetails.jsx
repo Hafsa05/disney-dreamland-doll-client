@@ -3,7 +3,11 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from '../../../providers/AuthProvider';
 import Select from 'react-select';
 import CreatableSelect from "react-select/creatable";
+import { useLoaderData } from 'react-router-dom';
 const UpdateToyDetails = () => {
+
+	const toyDetails = useLoaderData();
+	const { image, name, price, rating, subcategory, sellerName, sellerEmail, availableQuantity, productDetails } = toyDetails;
 
 	const { user } = useContext(AuthContext);
 	const [selectedOption, setSelectedOption] = useState(null);
@@ -43,21 +47,21 @@ const UpdateToyDetails = () => {
 				</div>
 				<form onSubmit={handleSubmit(onSubmit)}>
 
-					<input className="p-6 m-2 rounded-xl " {...register("image", { required: true })} placeholder="Enter image url of the toy" defaultValue="" type="text" />
+					<input className="p-6 m-2 rounded-xl " {...register("image", { required: true })} placeholder="Enter image url of the toy" defaultValue={image} type="text" />
 
-					<input className="p-6 m-2 rounded-xl" {...register("name", { required: true })} placeholder="Enter name of the product" defaultValue="" type="text" />
+					<input className="p-6 m-2 rounded-xl" value={name} {...register("name", { required: true })} placeholder="Enter name of the product" defaultValue={name} type="text" />
 
-					<input className="p-6 m-2 rounded-xl" value={user?.name} {...register("sellerName", { required: true })} placeholder="Enter seller name" type="text" />
+					<input className="p-6 m-2 rounded-xl" value={sellerName} {...register("sellerName", { required: true })} placeholder="Enter seller name" defaultValue={sellerName} type="text" />
 
-					<input className="p-6 m-2 rounded-xl" value={user?.email} {...register("sellerEmail", { required: true })} placeholder="Enter seller email" type="email" />
+					<input className="p-6 m-2 rounded-xl" value={user?.email} {...register("sellerEmail", { required: true })} placeholder="Enter seller email" defaultValue={sellerEmail} type="email" />
 
-					<input className="p-6 m-2 rounded-xl" {...register("price", { required: true })} placeholder="Enter price" type="number" />
+					<input className="p-6 m-2 rounded-xl" {...register("price", { required: true })} placeholder="Enter price" defaultValue={price} type="number" />
 
-					<input className="p-6 m-2 rounded-xl" {...register("rating", { required: true })} placeholder="Enter rating" type="text" />
+					<input className="p-6 m-2 rounded-xl" {...register("rating", { required: true })} placeholder="Enter rating" defaultValue={rating} type="text" />
 
-					<input className="p-6 m-2 rounded-xl" {...register("availableQuantity", { required: true })} placeholder="Enter available quantity" type="number" />
+					<input className="p-6 m-2 rounded-xl" {...register("availableQuantity", { required: true })} placeholder="Enter available quantity" defaultValue={availableQuantity} type="number" />
 
-					<input className="p-6 m-2 rounded-xl" {...register("productDetails", { required: true })} placeholder="Enter product details" type="text" />
+					<input className="p-6 m-2 rounded-xl" {...register("productDetails", { required: true })} placeholder="Enter product details" defaultValue={productDetails} type="text" />
 
 					<CreatableSelect
 						className="w-70"

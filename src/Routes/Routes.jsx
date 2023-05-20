@@ -55,9 +55,13 @@ const router = createBrowserRouter([
 				loader: ({ params }) => fetch(`http://localhost:5000/all-toys/${params.id}`)
 			},
 			{
-				// path: '/update-toy-details',
-				// element: <PrivateRoutes><UpdateToyDetails></UpdateToyDetails></PrivateRoutes>,
-				// loader: ({ params }) => fetch(`http://localhost:5000/all-toys/${params.id}`)
+				path: '/update-toys/:id',
+				element: <PrivateRoutes><UpdateToyDetails></UpdateToyDetails></PrivateRoutes>,
+				loader: ({ params }) => fetch(`http://localhost:5000/update-toys/${params.id}`, {
+					method: 'PUT',
+					headers: { "Content-Type": "application/json" },
+
+				})
 			},
 
 
