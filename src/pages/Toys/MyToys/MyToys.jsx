@@ -8,7 +8,6 @@ const MyToys = () => {
 	const [myToys, setMyToys] = useState([]);
 
 	const [toySearch, setToySearch] = useState("");
-	const [toyName, setToyName] = useState([]);
 
 	useEffect(() => {
 		fetch(`http://localhost:5000/my-toys/${user?.email}`)
@@ -17,6 +16,15 @@ const MyToys = () => {
 				setMyToys(result);
 			})
 	}, [user])
+
+	const handleToySearch = () => {
+		fetch(`http://localhost:5000/toySearch/${toySearch}`)
+			.then(res => res.json())
+			.then(data => {
+				console.log(data);
+				setMyToys(data);
+			});
+	}
 
 	// const handleToySearch = () => {
 	// 	fetch(`http://localhost:5000/getJobsByText/${search}`)
@@ -31,27 +39,24 @@ const MyToys = () => {
 		<div className='p-10 mx-auto'>
 			<p>Table length: {myToys.length}</p>
 
-			{/* <div className="search-box p-2 text-center">
-				<input
-					onChange={(e) => setToySearch(e.target.value)}
-					type="text"
-					className="p-1"
-				/>{" "}
-				<button onClick={handleToySearch}>Search</button>
-			</div> */}
+			<div className="text-center">
+				<input type="text" onChange={(e) => setToySearch(e.target.value)} placeholder="Search by toy name" className="input input-bordered input-primary w-full max-w-xs" />
+
+				<button className="btn btn-outline btn-primary m-5" onClick={handleToySearch}>Search</button>
+			</div>
 
 			<div className="overflow-x-auto w-full">
 				<table className="table w-full">
 					<thead >
 						<tr>
-							<th>Seller Name</th>
-							<th>Toy Name </th>
-							<th>Sub Category</th>
-							<th>Price</th>
-							<th>Quantity</th>
-							<th>View</th>
-							<th>Update</th>
-							<th>Delete</th>
+							<th className="bg-purple-100">Seller Name</th>
+							<th className="bg-purple-100">Toy Name </th>
+							<th className="bg-purple-100">Sub Category</th>
+							<th className="bg-purple-100">Price</th>
+							<th className="bg-purple-100">Quantity</th>
+							<th className="bg-purple-100">View</th>
+							<th className="bg-purple-100">Update</th>
+							<th className="bg-purple-100">Delete</th>
 
 						</tr>
 					</thead>
