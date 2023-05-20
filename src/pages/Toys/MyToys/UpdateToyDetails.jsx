@@ -3,13 +3,11 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from '../../../providers/AuthProvider';
 import Select from 'react-select';
 import CreatableSelect from "react-select/creatable";
-
-const AddToy = () => {
+const UpdateToyDetails = () => {
 
 	const { user } = useContext(AuthContext);
 	const [selectedOption, setSelectedOption] = useState(null);
 
-	// from react hook form 
 	const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
 	const onSubmit = (data) => {
@@ -38,6 +36,7 @@ const AddToy = () => {
 
 	return (
 		<div>
+			<h2>Update toy details</h2>
 			<div className='card card-body flex items-center justify-center max-w-xl shadow-xl bg-purple-50 '>
 				<div className="text-center lg:text-left">
 					<h1 className="text-3xl font-bold font-serif text-purple-600">Welcome seller, add your toy here!!</h1>
@@ -75,4 +74,4 @@ const AddToy = () => {
 	);
 };
 
-export default AddToy;
+export default UpdateToyDetails;

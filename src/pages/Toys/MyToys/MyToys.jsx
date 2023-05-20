@@ -26,14 +26,23 @@ const MyToys = () => {
 			});
 	}
 
-	// const handleToySearch = () => {
-	// 	fetch(`http://localhost:5000/getJobsByText/${search}`)
-	// 	  .then((res) => res.json())
-	// 	  .then((data) => {
-	// 		console.log(data);
-	// 		setToyName(data);
-	// 	  });
-	//   };
+	const handleDelete = (id) => {
+		const proceed = confirm("Are you sure you want to delete??");
+		if (proceed) {
+			fetch(`http://localhost:5000/my-toys/${id}`, {
+				method: 'DELETE'
+			})
+				.then(res => res.json())
+				.then(data => {
+					console.log(data);
+					if (data.deletedCount > 0) {
+						alert("delete successfully");
+						const remaining = myToys.filter(myToy => myToy._id !== id);
+						setMyToys(remaining);
+					}
+				})
+		}
+	}
 
 	return (
 		<div className='p-10 mx-auto'>
@@ -65,6 +74,7 @@ const MyToys = () => {
 							myToys.map(myToy => <MyToysData
 								key={myToy._id}
 								myToy={myToy}
+								handleDelete={handleDelete}
 							>
 							</MyToysData>)
 						}
