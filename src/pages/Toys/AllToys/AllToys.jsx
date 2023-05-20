@@ -11,32 +11,33 @@ const AllToys = () => {
 			})
 	})
 	return (
-		<div>
-			<p>length: {toys.length}</p>
+		<div className='p-10 mx-auto'> 
+			<p>Table length: {toys.length}</p>
 
-			<div className="overflow-x-auto">
-				<table className="table table-compact w-full">
+			<div className="overflow-x-auto w-full">
+				<table className="table w-full">
 					<thead>
 						<tr>
-							<th></th>
 							<th>Seller Name</th>
-							<th>Toy Name</th>
+							<th>Toy Name </th>
 							<th>Sub Category</th>
 							<th>Price</th>
-							<th>Quantity Login</th>
-							<th>Details</th>
+							<th>Quantity</th>
+							<th>View</th>
+							
 						</tr>
 					</thead>
 					<tbody>
 						{
-							toys.map(toy=> <ToysData
-							key={toy._id}
-							toy={toy}
-							></ToysData>)
+							toys.map(toy => <ToysData
+								key={toy._id}
+								toy={toy}
+							>
+							</ToysData>)
 						}
-						
-						
+
 					</tbody>
+
 
 				</table>
 			</div>

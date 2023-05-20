@@ -22,7 +22,7 @@ const Navbar = () => {
 				<li><Link to='/my-toys'>My Toys</Link></li>
 				<li><Link to='/add-toy'>Add Toy</Link></li>
 				<li><button onClick={handleLogOut}>Logout</button></li>
-				<label className="btn-circle avatar tooltip ml-5" data-tip={user.displayName}>
+				<label className="btn-circle avatar tooltip tooltip-right ml-5" data-tip={user.displayName}>
 					<div className="w-10 rounded-full" >
 						<img src={user?.photoURL} />
 					</div>
