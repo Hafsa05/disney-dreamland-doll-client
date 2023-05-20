@@ -8,11 +8,11 @@ const PrivateRoutes = ({ children }) => {
 	console.log(location);
 
 	if (loading) {
-		// return <progress className="progress w-56"></progress>
+
 		return (
 			<button type="button" class="bg-indigo-500 ..." disabled>
 				<svg className="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
-					
+
 				</svg>
 				Processing...
 			</button>

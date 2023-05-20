@@ -28,24 +28,7 @@ const MyToys = () => {
 	}
 
 	const handleDelete = (id) => {
-		const proceed =
-			Swal.fire({
-				title: 'Are you sure?',
-				text: "You won't be able to revert this!",
-				icon: 'warning',
-				showCancelButton: true,
-				confirmButtonColor: '#3085d6',
-				cancelButtonColor: '#d33',
-				confirmButtonText: 'Yes, delete it!'
-			}).then((result) => {
-				if (result.isConfirmed) {
-					Swal.fire(
-						'Deleted!',
-						'Your file has been deleted.',
-						'success'
-					)
-				}
-			});
+		const proceed = confirm("Are you sure to delete it??");
 		if (proceed) {
 			fetch(`http://localhost:5000/my-toys/${id}`, {
 				method: 'DELETE'
@@ -54,6 +37,12 @@ const MyToys = () => {
 				.then(data => {
 					console.log(data);
 					if (data.deletedCount > 0) {
+						// alert("delete done!!!");
+						Swal.fire(
+							'Deleted!',
+							'Your toy is deleted.',
+							'success'
+						);
 						const remaining = myToys.filter(myToy => myToy._id !== id);
 						setMyToys(remaining);
 					}
@@ -95,10 +84,7 @@ const MyToys = () => {
 							>
 							</MyToysData>)
 						}
-
 					</tbody>
-
-
 				</table>
 			</div>
 		</div>
