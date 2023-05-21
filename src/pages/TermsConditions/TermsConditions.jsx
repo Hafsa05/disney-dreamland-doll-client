@@ -17,7 +17,7 @@ const TermsConditions = () => {
 						4. Shipping and Delivery: We aim to process and ship orders promptly. However, delivery times may vary depending on your location and other factors beyond our control. We are not responsible for any delays or damages that may occur during the shipping process.
 					</li>
 					<li>
-					5. Returns and Exchanges: We accept returns and exchanges of Disney dolls within a specified timeframe, subject to certain conditions. Please refer to our Returns and Exchanges policy for detailed information on eligibility, procedures, and any associated fees.
+						5. Returns and Exchanges: We accept returns and exchanges of Disney dolls within a specified timeframe, subject to certain conditions. Please refer to our Returns and Exchanges policy for detailed information on eligibility, procedures, and any associated fees.
 					</li>
 				</ul>
 
@@ -51,7 +51,7 @@ const TermsConditions = () => {
 				<br />
 
 				<br />
-				
+
 			</p>
 		</div>
 	);
