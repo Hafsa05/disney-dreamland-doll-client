@@ -9,8 +9,8 @@ const AllToys = () => {
 
 	const [currentPage, setCurrentPage] = useState(1);
 	const { totalToys } = useLoaderData();
-	// const perPageToys = 3;
-	const [perPageToys, setPerPageToys] = useState(5)
+	// const perPageToys = 20;
+	const [perPageToys, setPerPageToys] = useState(20);
 	console.log(totalToys);
 	const numberOfPages = Math.ceil(totalToys / perPageToys);
 	console.log(numberOfPages);
@@ -24,7 +24,7 @@ const AllToys = () => {
 	}
 	// load all toys data
 	// useEffect(() => {
-	// 	fetch("http://localhost:5000/all-toys")
+	// 	fetch("https://disney-dreamland-doll-server.vercel.app/all-toys")
 	// 		.then(res => res.json())
 	// 		.then(result => {
 	// 			setToys(result);
@@ -34,7 +34,7 @@ const AllToys = () => {
 	// load data according to pagination  
 	useEffect(() => {
 		async function fetchSomeData() {
-			const someData = await fetch(`http://localhost:5000/all-toys?page=${currentPage}&limit=${perPageToys}`);
+			const someData = await fetch(`https://disney-dreamland-doll-server.vercel.app/all-toys?page=${currentPage}&limit=${perPageToys}`);
 			const data = await someData.json();
 			setToys(data);
 		}
@@ -43,7 +43,7 @@ const AllToys = () => {
 
 
 	const handleToySearch = () => {
-		fetch(`http://localhost:5000/toySearch/${toySearch}`)
+		fetch(`https://disney-dreamland-doll-server.vercel.app/toySearch/${toySearch}`)
 			.then(res => res.json())
 			.then(data => {
 				console.log(data);

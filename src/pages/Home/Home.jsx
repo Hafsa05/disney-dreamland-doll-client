@@ -135,8 +135,8 @@ const Home = () => {
 					<img src={banner5} className="w-full " />
 					<div className="absolute h-full flex items-center  left-0 top-0 bg-gradient-to-r from-[#eca2da] to-[rgba(21, 21, 21, 0)]">
 						<div className='text-white space-y-7 pl-12'>
-							<h2 className='text-6xl font-bold'>Disney Dreamland Doll</h2>
-							<p className='text-xl'> Live dream with disney magic & <br /> Discover a world of magic and nostalgia with us
+							<h2 className='text-6xl font-serif'>Disney Dreamland Doll</h2>
+							<p className='text-xl font-serif'> Live dream with disney magic & <br /> Discover a world of magic and nostalgia with us
 							</p>
 							<div>
 								<button className="text-white btn btn-outline btn-primary mr-5">Show Toys</button>

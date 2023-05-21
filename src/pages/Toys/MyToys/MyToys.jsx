@@ -11,7 +11,7 @@ const MyToys = () => {
 	const [toySearch, setToySearch] = useState("");
 
 	useEffect(() => {
-		fetch(`http://localhost:5000/my-toys/${user?.email}`)
+		fetch(`https://disney-dreamland-doll-server.vercel.app/my-toys/${user?.email}`)
 			.then(res => res.json())
 			.then(result => {
 				setMyToys(result);
@@ -19,7 +19,7 @@ const MyToys = () => {
 	}, [user])
 
 	const handleToySearch = () => {
-		fetch(`http://localhost:5000/toySearch/${toySearch}`)
+		fetch(`https://disney-dreamland-doll-server.vercel.app/toySearch/${toySearch}`)
 			.then(res => res.json())
 			.then(data => {
 				console.log(data);
@@ -30,7 +30,7 @@ const MyToys = () => {
 	const handleDelete = (id) => {
 		const proceed = confirm("Are you sure to delete it??");
 		if (proceed) {
-			fetch(`http://localhost:5000/my-toys/${id}`, {
+			fetch(`https://disney-dreamland-doll-server.vercel.app/my-toys/${id}`, {
 				method: 'DELETE'
 			})
 				.then(res => res.json())

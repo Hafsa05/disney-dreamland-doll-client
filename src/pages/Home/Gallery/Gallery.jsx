@@ -5,7 +5,7 @@ const Gallery = () => {
 	const [photos, setPhotos] = useState([]);
 
 	useEffect(() => {
-		fetch('http://localhost:5000/gallery')
+		fetch('https://disney-dreamland-doll-server.vercel.app/gallery')
 			.then(res => res.json())
 			.then(data => setPhotos(data));
 	}, [])

@@ -16,7 +16,7 @@ const AddToy = () => {
 	const onSubmit = (data) => {
 		data.subcategory = selectedOption;
 
-		fetch("http://localhost:5000/add-toy", {
+		fetch("https://disney-dreamland-doll-server.vercel.app/add-toy", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(data),

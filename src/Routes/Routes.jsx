@@ -11,11 +11,13 @@ import PrivateRoutes from "./PrivateRoutes";
 import MyToys from "../pages/Toys/MyToys/MyToys";
 import UpdateToyDetails from "../pages/Toys/MyToys/UpdateToyDetails";
 import ToysDetails from "../pages/Toys/AllToys/ToysDetails";
+import ErrorPage from "../errorPage/ErrorPage";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <Main></Main>,
+		errorElement: <ErrorPage></ErrorPage>,
 		children: [
 			{
 				path: '/',
@@ -40,7 +42,7 @@ const router = createBrowserRouter([
 			{
 				path: '/all-toys',
 				element: <AllToys></AllToys>,
-				loader: ()=> fetch('http://localhost:5000/total-toys')
+				loader: ()=> fetch('https://disney-dreamland-doll-server.vercel.app/total-toys')
 			},
 			{
 				path: '/add-toy',
@@ -53,12 +55,12 @@ const router = createBrowserRouter([
 			{
 				path: '/toys-details/:id',
 				element: <PrivateRoutes><ToysDetails></ToysDetails></PrivateRoutes>,
-				loader: ({ params }) => fetch(`http://localhost:5000/all-toys/${params.id}`)
+				loader: ({ params }) => fetch(`https://disney-dreamland-doll-server.vercel.app/all-toys/${params.id}`)
 			},
 			{
 				path: '/update-toys/:id',
 				element: <PrivateRoutes><UpdateToyDetails></UpdateToyDetails></PrivateRoutes>,
-				// loader: ({ params }) => fetch(`http://localhost:5000/update-toys/${params.id}`, {
+				// loader: ({ params }) => fetch(`https://disney-dreamland-doll-server.vercel.app/update-toys/${params.id}`, {
 				// 	method: 'PUT',
 				// 	headers: { "Content-Type": "application/json" },
 
