@@ -89,12 +89,9 @@ const Login = () => {
 								<div className="form-control mt-6">
 									<input className="btn btn-primary" type="submit" value="Login" />
 								</div>
-								<p className="text-center"><small>Or use any of these options</small></p>
-								<button onClick={handleGoogleSignIn} className='w-full bg-sky-400 text-white font-bold py-2 px-4 rounded mt-4 flex justify-center items-center gap-2'> <FaGoogle></FaGoogle> Login with Google </button> <br />
+								<p className="text-center"><small>Or use google</small></p>
+								<button onClick={handleGoogleSignIn} className='w-full btn btn-primary text-white font-bold py-2 px-4 rounded-md  flex justify-center items-center gap-2'> <FaGoogle></FaGoogle> Login with Google </button> <br />
 							</form>
-							{/* <div className="form-control mt-4">
-								<input className="btn btn-primary" type="submit" value="" />
-							</div> */}
 							<p className='my-5 text-center'>New to Disney Dreamland Doll? <br /><Link className='text-purple-500 font-bold' to='/registration'>Registration</Link> </p>
 						</div>
 					</div>

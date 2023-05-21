@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo/logo.png'
+
 const Footer = () => {
 	return (
 		<div>
@@ -19,9 +20,9 @@ const Footer = () => {
 				</div>
 				<div>
 					<span className="footer-title">Address and Contact</span>
-					<a className="link link-hover">1234 Dhanmondi, Dhaka, Bangladesh</a>
-					<a className="link link-hover">Phone: (+880) 1234-56789</a>
-					<a className="link link-hover">Email: disneydoll@gmail.com</a>
+					<p className="link link-hover">1234 Dhanmondi, Dhaka, Bangladesh</p>
+					<p className="link link-hover">Phone: (+880) 1234-56789 </p>
+					<p className="link link-hover">Email: disneydoll@gmail.com  </p>
 
 				</div>
 				<div>

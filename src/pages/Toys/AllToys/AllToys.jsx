@@ -1,18 +1,46 @@
 import React, { useEffect, useState } from 'react';
 import ToysData from './ToysData';
+import { useLoaderData } from 'react-router-dom';
 
 const AllToys = () => {
 	const [toys, setToys] = useState([]);
 
 	const [toySearch, setToySearch] = useState("");
 
+	const [currentPage, setCurrentPage] = useState(1);
+	const { totalToys } = useLoaderData();
+	// const perPageToys = 3;
+	const [perPageToys, setPerPageToys] = useState(5)
+	console.log(totalToys);
+	const numberOfPages = Math.ceil(totalToys / perPageToys);
+	console.log(numberOfPages);
+
+	const pageNumbers = [...Array(numberOfPages).keys()];
+
+	const pageOption = [2, 5, 10];
+	function handlePerPageToys(e) {
+		setPerPageToys(parseInt(e.target.value));
+		setCurrentPage(0);
+	}
+	// load all toys data
+	// useEffect(() => {
+	// 	fetch("http://localhost:5000/all-toys")
+	// 		.then(res => res.json())
+	// 		.then(result => {
+	// 			setToys(result);
+	// 		})
+	// }, [])
+
+	// load data according to pagination  
 	useEffect(() => {
-		fetch("http://localhost:5000/all-toys")
-			.then(res => res.json())
-			.then(result => {
-				setToys(result);
-			})
-	}, [])
+		async function fetchSomeData() {
+			const someData = await fetch(`http://localhost:5000/all-toys?page=${currentPage}&limit=${perPageToys}`);
+			const data = await someData.json();
+			setToys(data);
+		}
+		fetchSomeData()
+	}, [currentPage, perPageToys])
+
 
 	const handleToySearch = () => {
 		fetch(`http://localhost:5000/toySearch/${toySearch}`)
@@ -24,6 +52,7 @@ const AllToys = () => {
 	}
 
 	return (
+
 		<div className='p-10 mx-auto'>
 			<p>Table length: {toys.length}</p>
 
@@ -60,7 +89,36 @@ const AllToys = () => {
 
 				</table>
 			</div>
+
+			{/* pagination part */}
+			<div className='text-center' >
+				<p><small>current page no: {currentPage + 1} & toys per page: {perPageToys}</small></p>
+				{
+					pageNumbers.map(pageNumber => <button className='btn btn-xs bg-purple-200 border-white w-10'
+						key={pageNumber}
+						onClick={() => setCurrentPage(pageNumber)}
+
+					>
+						{pageNumber + 1}
+					</button>)
+
+				}
+				<select value={perPageToys} onChange={handlePerPageToys}>
+					{
+						pageOption.map(pOption => {
+							<option key={pOption} value={pOption}>
+								{pOption}
+							</option>
+						})
+					}
+				</select>
+			</div>
+
 		</div>
+
+
+
+
 	);
 };
 

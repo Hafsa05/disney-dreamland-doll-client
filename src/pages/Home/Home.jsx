@@ -13,6 +13,24 @@ const Home = () => {
 			<div className="carousel w-full h-[750px]">
 				<div id="item1" className="carousel-item w-full">
 					<img src={banner1} className="w-full" />
+
+					<div className="absolute h-full flex items-center left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+						<div className='text-white space-y-7 w-1/2 pl-12'>
+							<h2 className='text-6xl font-bold'>Affordable Price For Car Servicing</h2>
+							<p>
+								There are many variations of passages of  available, but the majority have suffered alteration in some form
+							</p>
+							<div>
+								<button className="text-white btn btn-error mr-5">Discover More</button>
+								<button className="btn btn-outline text-white">Latest Project</button>
+							</div>
+						</div>
+					</div>
+					<div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
+						<a href="#slide4" className="btn btn-circle mr-5">❮</a>
+						<a href="#slide2" className="btn btn-circle">❯</a>
+					</div>
+
 				</div>
 				<div id="item2" className="carousel-item w-full">
 					<img src={banner2} className="w-full" />
