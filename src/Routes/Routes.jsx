@@ -58,11 +58,11 @@ const router = createBrowserRouter([
 			{
 				path: '/update-toys/:id',
 				element: <PrivateRoutes><UpdateToyDetails></UpdateToyDetails></PrivateRoutes>,
-				loader: ({ params }) => fetch(`http://localhost:5000/update-toys/${params.id}`, {
-					method: 'PUT',
-					headers: { "Content-Type": "application/json" },
+				// loader: ({ params }) => fetch(`http://localhost:5000/update-toys/${params.id}`, {
+				// 	method: 'PUT',
+				// 	headers: { "Content-Type": "application/json" },
 
-				})
+				// })
 			},
 
 

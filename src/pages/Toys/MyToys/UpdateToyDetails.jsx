@@ -7,7 +7,8 @@ import { useLoaderData } from 'react-router-dom';
 const UpdateToyDetails = () => {
 
 	const toyDetails = useLoaderData();
-	const { image, name, price, rating, subcategory, sellerName, sellerEmail, availableQuantity, productDetails } = toyDetails;
+	const { _id, image, name, price, rating, subcategory, sellerName, sellerEmail, availableQuantity, productDetails } = toyDetails;
+
 
 	const { user } = useContext(AuthContext);
 	const [selectedOption, setSelectedOption] = useState(null);
@@ -17,8 +18,9 @@ const UpdateToyDetails = () => {
 	const onSubmit = (data) => {
 		data.subcategory = selectedOption;
 
-		fetch("http://localhost:5000/add-toy", {
-			method: "POST",
+		fetch(`http://localhost:5000/update-toys${_id}`, {
+			// method: "POST",
+			method: "PUT",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(data),
 		})
