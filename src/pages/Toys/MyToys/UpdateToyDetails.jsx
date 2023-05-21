@@ -6,11 +6,11 @@ import CreatableSelect from "react-select/creatable";
 import { useLoaderData } from 'react-router-dom';
 const UpdateToyDetails = () => {
 
-	const toyDetails = useLoaderData();
-	const { _id, image, name, price, rating, subcategory, sellerName, sellerEmail, availableQuantity, productDetails } = toyDetails;
-
-
 	const { user } = useContext(AuthContext);
+	// const toyDetails = ;
+	// const { _id, image, name, price, rating, subcategory, sellerName, sellerEmail, availableQuantity, productDetails } = toyDetails;
+	// console.log(_id);
+
 	const [selectedOption, setSelectedOption] = useState(null);
 
 	const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -18,7 +18,7 @@ const UpdateToyDetails = () => {
 	const onSubmit = (data) => {
 		data.subcategory = selectedOption;
 
-		fetch(`http://localhost:5000/update-toys${_id}`, {
+		fetch(`http://localhost:5000/update-toys${user._id}`, {
 			// method: "POST",
 			method: "PUT",
 			headers: { "Content-Type": "application/json" },
@@ -42,28 +42,27 @@ const UpdateToyDetails = () => {
 
 	return (
 		<div>
-			<h2>Update toy details</h2>
 			<div className='card card-body flex items-center justify-center max-w-xl shadow-xl bg-purple-50 '>
 				<div className="text-center lg:text-left">
-					<h1 className="text-3xl font-bold font-serif text-purple-600">Welcome seller, add your toy here!!</h1>
+					<h1 className="text-3xl font-bold font-serif text-purple-600">Welcome seller, update toy details here!!</h1>
 				</div>
 				<form onSubmit={handleSubmit(onSubmit)}>
 
-					<input className="p-6 m-2 rounded-xl " {...register("image", { required: true })} placeholder="Enter image url of the toy" defaultValue={image} type="text" />
+					<input className="p-6 m-2 rounded-xl " {...register("image", { required: true })} placeholder="Enter image url of the toy" defaultValue={user.image} type="text" />
 
-					<input className="p-6 m-2 rounded-xl" value={name} {...register("name", { required: true })} placeholder="Enter name of the product" defaultValue={name} type="text" />
+					<input className="p-6 m-2 rounded-xl" value={user.name} {...register("name", { required: true })} placeholder="Enter name of the product" defaultValue={user.name} type="text" />
 
-					<input className="p-6 m-2 rounded-xl" value={sellerName} {...register("sellerName", { required: true })} placeholder="Enter seller name" defaultValue={sellerName} type="text" />
+					<input className="p-6 m-2 rounded-xl" value={user.sellerName} {...register("sellerName", { required: true })} placeholder="Enter seller name" defaultValue={user.sellerName} type="text" />
 
-					<input className="p-6 m-2 rounded-xl" value={user?.email} {...register("sellerEmail", { required: true })} placeholder="Enter seller email" defaultValue={sellerEmail} type="email" />
+					<input className="p-6 m-2 rounded-xl" value={user?.email} {...register("sellerEmail", { required: true })} placeholder="Enter seller email" defaultValue={user.sellerEmail} type="email" />
 
-					<input className="p-6 m-2 rounded-xl" {...register("price", { required: true })} placeholder="Enter price" defaultValue={price} type="number" />
+					<input className="p-6 m-2 rounded-xl" {...register("price", { required: true })} placeholder="Enter price" defaultValue={user.price} type="number" />
 
-					<input className="p-6 m-2 rounded-xl" {...register("rating", { required: true })} placeholder="Enter rating" defaultValue={rating} type="text" />
+					<input className="p-6 m-2 rounded-xl" {...register("rating", { required: true })} placeholder="Enter rating" defaultValue={user.rating} type="text" />
 
-					<input className="p-6 m-2 rounded-xl" {...register("availableQuantity", { required: true })} placeholder="Enter available quantity" defaultValue={availableQuantity} type="number" />
+					<input className="p-6 m-2 rounded-xl" {...register("availableQuantity", { required: true })} placeholder="Enter available quantity" defaultValue={user.availableQuantity} type="number" />
 
-					<input className="p-6 m-2 rounded-xl" {...register("productDetails", { required: true })} placeholder="Enter product details" defaultValue={productDetails} type="text" />
+					<input className="p-6 m-2 rounded-xl" {...register("productDetails", { required: true })} placeholder="Enter product details" defaultValue={user.productDetails} type="text" />
 
 					<CreatableSelect
 						className="w-70"
