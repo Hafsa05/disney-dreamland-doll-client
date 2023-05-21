@@ -32,13 +32,15 @@ const UpdateToyDetails = () => {
 		console.log(data);
 	};
 
-	const categoryOptions = [
-		{ value: "Disney Princess", label: "Disney Princess" },
-		{ value: "Frozen Doll", label: "Frozen Doll" },
-		{ value: "Animation Doll", label: "Animation Doll" },
-		{ value: "Donald Doll", label: "Donald Doll" },
+	// const categoryOptions = [
+	// 	{ value: "Disney Princess", label: "Disney Princess" },
+	// 	{ value: "Frozen Doll", label: "Frozen Doll" },
+	// 	{ value: "Animation Doll", label: "Animation Doll" },
+	// 	{ value: "Donald Doll", label: "Donald Doll" },
 
-	];
+	// ];
+
+	
 
 	return (
 		<div>
